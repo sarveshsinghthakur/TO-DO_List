@@ -59,13 +59,13 @@
     <div class="container my-4">
         <h2 class="text-center">TODOs List</h2>
          
-            <div class="form-group">
+            <div class="form-group" id="titcon">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
                 <small id="emailHelp" class="form-text text-muted">Add an item to the list</small>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" id="descon">
                 <label for="description">Description</label>
                 <textarea class="form-control" id="description" rows="3"></textarea>
             </div>
@@ -126,6 +126,12 @@ function getAndUpdate(){
         itemJsonArray = JSON.parse(itemJsonArrayStr);
         itemJsonArray.push([tit, desc]);
         localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+          document.getElementById('titcon').innerHTML= `<label for="title">Title</label>
+                <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">Add an item to the list</small> `;
+        document.getElementById('descon').innerHTML= `<label for="description">Description</label>
+                <textarea class="form-control" id="description" rows="3"></textarea> `;
+    }
     }
     update();
 }
