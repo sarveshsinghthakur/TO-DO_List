@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -7,15 +9,106 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="todo.js">
-
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <title>TODOs List</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #007bff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #ffffff !important;
+        }
+
+        .navbar-brand:hover,
+        .nav-link:hover {
+            color: #f8f9fa !important;
+        }
+
+        .container {
+            margin-top: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+        .table {
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle;
+        }
+
+        .table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+            color: #6c757d;
+        }
+
+        .input-label {
+            font-weight: bold;
+        }
+
+        .todo-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .card-title {
+            color: #007bff;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="https://sarveshsinghthakur.github.io/TO-DO_List/">TODOs List</a>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">TODOs List</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,7 +116,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="https://zoom-clone-boom-e271-git-main-sars-projects-d2931c00.vercel.app/" target="_blank">BOOM</a>
                 </li>
                 <li class="nav-item">
@@ -32,17 +125,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://sarveshsinghthakur.github.io/Portfolio/" target="_blank">PORTFOLIO</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" target="_blank" href="https://sarveshsinghthakur.github.io/AJIO_CLONE/">AJIO CLONE <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://sarveshsinghthakur.github.io/AJIO_CLONE/">AJIO CLONE</a>
                 </li>
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="https://news-loop-hmu4zpui4-sars-projects-d2931c00.vercel.app/" target="_blank">NEWSLOOP</a>
                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="https://toffeshare-it-2.onrender.com/" target="_blank">Toffeshare-it
-</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://toffeshare-it-2.onrender.com/" target="_blank">Toffeshare-it</a>
                 </li>
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="locator-1.onrender.com/" target="_blank">Locator.IN</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -51,63 +143,56 @@
                         MORE - ONS
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                         <a class="dropdown-item" target="_blank" href="https://sarveshsinghthakur.github.io/sarveshsinghthakur/">RESUME</a>
+                        <a class="dropdown-item" target="_blank" href="https://sarveshsinghthakur.github.io/sarveshsinghthakur/">RESUME</a>
                         <a class="dropdown-item" target="_blank" href="https://sarveshsinghthakur.github.io/Application-form/">APPLICATION FORM</a>
                         <a class="dropdown-item" href="https://sarveshsinghthakur.github.io/RESPONSIVE-TIME/" target="_blank">CLOCK</a>
-                       
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://sarveshsinghthakur.github.io/Portfolio/#Contact" target="_blank" tabindex="-1" aria-disabled="true">Contact</a>
+                    <a class="nav-link" href="https://sarveshsinghthakur.github.io/Portfolio/#Contact" target="_blank">Contact</a>
                 </li>
             </ul>
-            
         </div>
     </nav>
+
     <div class="container my-4">
-        <h2 class="text-center">TODOs List</h2>
-         
-            <div class="form-group" id="titcon">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">Add an item to the list</small>
-            </div>
+        <h2 class="text-center">Your TODOs</h2>
 
-            <div class="form-group" id="descon">
-                <label for="description">Description</label>
-                <textarea class="form-control" id="description" rows="3"></textarea>
-            </div>
-            
+        <div class="form-group" id="titcon">
+            <label for="title" class="input-label">Title</label>
+            <input type="text" class="form-control" id="title" aria-describedby="titleHelp">
+            <small id="titleHelp" class="form-text text-muted">Add an item to the list</small>
+        </div>
 
-            <button   id="add" class="btn btn-primary">Add to list</button>
-            <button  id="clear" class="btn btn-primary" onclick="clearStorage()">Clear list</button>
-         
+        <div class="form-group" id="descon">
+            <label for="description" class="input-label">Description</label>
+            <textarea class="form-control" id="description" rows="3"></textarea>
+        </div>
 
-        <div id="items" class="my-4">
+        <button id="add" class="btn btn-custom">Add to List</button>
+        <button id="clear" class="btn btn-danger" onclick="clearStorage()">Clear List</button>
+
+        <div id="items" class="todo-card">
             <h2>Your Items</h2>
             <table class="table">
                 <thead>
-                  <tr>
-                    <th scope="col">SNo</th>
-                    <th scope="col">Item Title</th>
-                    <th scope="col">Item Description</th> 
-                    <th scope="col">Actions</th> 
-                  </tr>
+                    <tr>
+                        <th scope="col">SNo</th>
+                        <th scope="col">Item Title</th>
+                        <th scope="col">Item Description</th>
+                        <th scope="col">Actions</th>
+                    </tr>
                 </thead>
-                <tbody id="tableBody">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Get some Coffee</td>
-                    <td></td> 
-                    <td><button class="btn btn-sm btn-primary">Delete</button></td> 
-                  </tr>
-                  
-                </tbody>
-              </table>
+                <tbody id="tableBody"></tbody>
+            </table>
         </div>
     </div>
 
+    <div class="footer">
+        <p>© 2024 Your Name | All rights reserved.</p>
+    </div>
+
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -117,76 +202,84 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-        <script> 
-        
-function getAndUpdate(){
-    console.log("Updating List...");
-    tit = document.getElementById('title').value;
-    desc = document.getElementById('description').value;
-    if (localStorage.getItem('itemsJson')==null){
-        itemJsonArray = [];
-        itemJsonArray.push([tit, desc]);
-        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
-    }
-    else{
-        itemJsonArrayStr = localStorage.getItem('itemsJson')
-        itemJsonArray = JSON.parse(itemJsonArrayStr);
-        itemJsonArray.push([tit, desc]);
-        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
-        document.getElementById('titcon').innerHTML= `<label for="title">Title</label>
-                <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">Add an item to the list</small> `;
-        document.getElementById('descon').innerHTML= `<label for="description">Description</label>
-                <textarea class="form-control" id="description" rows="3"></textarea> `;
-    }
-    update();
-}
+    <script>
+        function getAndUpdate() {
+            console.log("Updating List...");
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
 
-function update(){
-    if (localStorage.getItem('itemsJson')==null){
-        itemJsonArray = []; 
-        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
-    } 
-    else{
-        itemJsonArrayStr = localStorage.getItem('itemsJson')
-        itemJsonArray = JSON.parse(itemJsonArrayStr); 
-    }
-    // Populate the table
-    let tableBody = document.getElementById("tableBody");
-    let str = "";
-    itemJsonArray.forEach((element, index) => {
-        str += `
-        <tr>
-        <th scope="row">${index + 1}</th>
-        <td>${element[0]}</td>
-        <td>${element[1]}</td> 
-        <td><button class="btn btn-sm btn-primary" onclick="deleted(${index})">Delete</button></td> 
-        </tr>`; 
-    });
-    tableBody.innerHTML = str;
-}
-add = document.getElementById("add");
-add.addEventListener("click", getAndUpdate);
-update();
-function deleted(itemIndex){
-    console.log("Delete", itemIndex);
-    itemJsonArrayStr = localStorage.getItem('itemsJson')
-    itemJsonArray = JSON.parse(itemJsonArrayStr);
-    // Delete itemIndex element from the array
-    itemJsonArray.splice(itemIndex, 1);
-    localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
-    update();
+            // Input validation
+            if (title === "") {
+                alert("Title cannot be empty.");
+                return;
+            }
 
-}
-function clearStorage(){
-    if (confirm("Do you really want to clear?")){
-    console.log('Clearing the storage')
-    localStorage.clear();
-    update()
-    }
-}
-</script>
-       
+            if (localStorage.getItem('itemsJson') === null) {
+                itemJsonArray = [];
+            } else {
+                itemJsonArray = JSON.parse(localStorage.getItem('itemsJson'));
+            }
+
+            itemJsonArray.push({ title, description });
+            localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
+
+            // Clear input fields
+            document.getElementById('title').value = "";
+            document.getElementById('description').value = "";
+
+            update();
+        }
+
+        function update() {
+            const itemJsonArray = JSON.parse(localStorage.getItem('itemsJson')) || [];
+            let tableBody = document.getElementById("tableBody");
+            let str = "";
+
+            itemJsonArray.forEach((element, index) => {
+                str += `
+                <tr>
+                    <th scope="row">${index + 1}</th>
+                    <td>${element.title}</td>
+                    <td>${element.description}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning" onclick="edit(${index})"><i class="fas fa-edit"></i> Edit</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteItem(${index})"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </td>
+                </tr>`;
+            });
+
+            tableBody.innerHTML = str;
+        }
+
+        function deleteItem(itemIndex) {
+            const itemJsonArray = JSON.parse(localStorage.getItem('itemsJson'));
+            itemJsonArray.splice(itemIndex, 1);
+            localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
+            update();
+        }
+
+        function edit(itemIndex) {
+            const itemJsonArray = JSON.parse(localStorage.getItem('itemsJson'));
+            document.getElementById('title').value = itemJsonArray[itemIndex].title;
+            document.getElementById('description').value = itemJsonArray[itemIndex].description;
+
+            // Delete the item after loading it for editing
+            deleteItem(itemIndex);
+        }
+
+        function clearStorage() {
+            if (confirm("Do you really want to clear?")) {
+                console.log('Clearing the storage');
+                localStorage.clear();
+                update();
+            }
+        }
+
+        // Event listener
+        document.getElementById("add").addEventListener("click", getAndUpdate);
+        update();
+    </script>
 </body>
 
 </html>
+
